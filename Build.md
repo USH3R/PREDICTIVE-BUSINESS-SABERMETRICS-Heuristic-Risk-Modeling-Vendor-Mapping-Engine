@@ -1,7 +1,7 @@
 **The BUILD.md (The "How" & Technical)**  
 This is the "Hardcore" manual for the Heuristic Risk Modeling Vendor Mapping Engine.  
     Variable Architecture: Detailed breakdown of the Independent Variable (the vendor's technical/market stack) and the Dependent Variable (the Risk Score).  
-    NIST Integration: Specific instructions on how the Legacy Debt metric is calculated using the inventory and segmentation strategies from your Executive Summary.  
+    NIST Integration: Specific instructions on how the Legacy Debt metric is calculated using the inventory and segmentation strategies from my Executive Summary.  
     SPSS-Style Visualization: Documentation on how the Python engine generates the Frequency Tables, Bar Charts, and Pie Charts to emulate professional academic output.  
     Installation: The "8K Play-by-Play" for setting up the environment, dependencies, and running the dashboard.      
     
