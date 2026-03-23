@@ -67,3 +67,41 @@ Later add:
 - SEC financial filings  
 - Social sentiment scraping  
 Then the engine becomes a real predictive supply chain risk system.
+
+**Flow Diagram**
+Vendor Data (CSV / JSON)  
+        →  
+Data Loader (Python / Pandas)  
+        →  
+Heuristic Risk Engine  
+(Schadenfreude + Legacy Debt + Financial Velocity)  
+        →  
+Risk Score Calculation  
+        →  
+Vendor Risk Table  
+        →  
+Visualization Engine  
+        →        →        →  
+Bar Charts   Pie Charts   Risk Tables  
+        →  
+Critical Rhetoric Generator  
+        →  
+Risk Report Output  
+        →  
+Dashboard Interface  
+(Streamlit)  
+
+**Potential File Types**
+README.md  
+requirements.txt  
+vendors.csv  
+sentiment_data.json  
+risk_model.py  
+legacy_debt.py  
+financial_velocity.py  
+sentiment_model.py  
+charts.py  
+tables.py  
+rhetoric_report.py  
+app.py  
+prototype.ipynb  
