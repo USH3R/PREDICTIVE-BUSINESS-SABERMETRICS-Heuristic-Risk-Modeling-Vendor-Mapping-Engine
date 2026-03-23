@@ -1,6 +1,6 @@
 **How to Run the Application**
 
-  Run in GitHub Codespaces (Recommended)
+  1. Run in GitHub Codespaces (Recommended)
   Open this repository on GitHub.
   Click Code → Codespaces → Create Codespace on main.
   Wait for the environment to load.
