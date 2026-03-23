@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from risk_model import calculate_risk
-import plotly.express as px
+import plotly.graph_objects as go
 
 # -----------------------------
 # Load vendor data
@@ -38,7 +38,7 @@ st.subheader("Gold Standard: Vendor Integrity Score (Hover for Components)")
 # Vendor Integrity Score (VIS) = RiskScore
 df['VIS'] = df['RiskScore']
 
-# Create hover text for each vendor
+# Prepare hover text for each vendor
 hover_text = [
     f"Vendor: {v}<br>"
     f"VIS: {vis}<br>"
@@ -52,15 +52,15 @@ hover_text = [
     )
 ]
 
-# Heatmap visualization
-fig_heatmap = px.imshow(
-    [df['VIS'].values.reshape(1, -1)],  # ensure 2D array
-    labels=dict(x="Vendor", y="Score", color="Vendor Integrity Score"),
+# Heatmap using Plotly Graph Objects
+fig_heatmap = go.Figure(data=go.Heatmap(
+    z=[df['VIS'].values],        # 2D array
     x=df['Vendor'],
     y=["Vendor Integrity Score"],
-    color_continuous_scale='RdYlGn_r',  # red=high risk, green=low risk
-    text=hover_text
-)
+    colorscale='RdYlGn_r',      # red=high risk, green=low risk
+    text=hover_text,
+    hoverinfo='text'             # show our custom hover text
+))
 
 st.plotly_chart(fig_heatmap, use_container_width=True)
 
