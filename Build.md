@@ -4,6 +4,7 @@ This is the "Hardcore" manual for the Heuristic Risk Modeling Vendor Mapping Eng
     NIST Integration: Specific instructions on how the Legacy Debt metric is calculated using the inventory and segmentation strategies from my Executive Summary.  
     SPSS-Style Visualization: Documentation on how the Python engine generates the Frequency Tables, Bar Charts, and Pie Charts to emulate professional academic output.  
     Installation: The "8K Play-by-Play" for setting up the environment, dependencies, and running the dashboard.        
+    
     1. Build the GitHub Repository
     Create a repo called something like:  
     predictive-business-sabermetrics    
