@@ -2,14 +2,14 @@
 Create a repo called something like:
 predictive-business-sabermetrics  
   
-Structure:
-/data         # CSV or JSON mock datasets
-/notebooks    # Jupyter notebooks for initial analysis
-/src          # Python scripts for calculations & plotting
-/docs         # Documentation, diagrams, instructions
-/dash_app     # Optional: Streamlit / Plotly Dash dashboard
-README.md     # Overview of the tool
-Version everything; branch for new features (like risk-scoring, visualization, dashboard).   
+Structure:  
+/data         # CSV or JSON mock datasets  
+/notebooks    # Jupyter notebooks for initial analysis  
+/src          # Python scripts for calculations & plotting  
+/docs         # Documentation, diagrams, instructions  
+/dash_app     # Optional: Streamlit / Plotly Dash dashboard  
+README.md     # Overview of the tool  
+Version everything; branch for new features (like risk-scoring, visualization, dashboard).  
   
 2. Core Features (SPSS-inspired)  
 Input Data:
