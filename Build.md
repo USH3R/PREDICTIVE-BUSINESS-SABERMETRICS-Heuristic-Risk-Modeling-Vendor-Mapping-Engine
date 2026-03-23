@@ -47,18 +47,18 @@ This is the "Hardcore" manual for the Heuristic Risk Modeling Vendor Mapping Eng
 
 **Core Data Model**  
 Dataset example (vendors.csv)  
-Vendor,MarketSentiment,LegacyDebt,FinancialVelocity  
-LegacyToyMaker,78,85,32  
-ModernTechFirm,20,15,80  
-GovContractorX,55,60,45  
-CloudProviderZ,25,20,90  
+Vendor, MarketSentiment, LegacyDebt, Financial Velocity  
+Legacy Toy Maker, 78, 85, 32  
+Modern Tech Firm, 20, 15, 80  
+Gov Contractor X, 55, 60, 45  
+Cloud Provider Z, 25, 20, 90  
 
-**Metrics:**
-Metric	Meaning
-Market Sentiment	Schadenfreude index
-Legacy Debt	% unsupported hardware
-Financial Velocity	revenue trajectory
-Risk Score	weighted heuristic output
+**Metrics:**  
+Metric	Meaning  
+Market Sentiment  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Schadenfreude index  
+Legacy Debt	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% unsupported hardware  
+Financial Velocity &nbsp;&nbsp;&nbsp;&nbsp;revenue trajectory  
+Risk Score	&nbsp;&nbsp;&nbsp;&nbsp;weighted heuristic output
 
 **The Real Sabermetric (Future Step)**  
 Later add:  
