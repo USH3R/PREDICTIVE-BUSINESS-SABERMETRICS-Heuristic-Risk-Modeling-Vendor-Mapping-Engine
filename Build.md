@@ -55,10 +55,10 @@ Cloud Provider Z, 25, 20, 90
 
 **Metrics:**  
 Metric	Meaning  
-Market Sentiment  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Schadenfreude index  
-Legacy Debt	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% unsupported hardware  
-Financial Velocity &nbsp;&nbsp;&nbsp;&nbsp;revenue trajectory  
-Risk Score	&nbsp;&nbsp;&nbsp;&nbsp;weighted heuristic output
+Market Sentiment  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Schadenfreude index  
+Legacy Debt	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% unsupported hardware  
+Financial Velocity &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;revenue trajectory  
+Risk Score	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;weighted heuristic output
 
 **The Real Sabermetric (Future Step)**  
 Later add:  
