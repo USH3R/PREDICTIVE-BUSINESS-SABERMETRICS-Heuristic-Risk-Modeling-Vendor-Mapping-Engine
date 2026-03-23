@@ -1,5 +1,5 @@
-Vendor,MarketSentiment,LegacyDebt,FinancialVelocity
-LegacyToyMaker,78,85,32
-ModernTechFirm,20,15,80
-GovContractorX,55,60,45
-CloudProviderZ,25,20,90
+Vendor,MarketSentiment,LegacyDebt,FinancialVelocity,OperationalFragility
+LegacyToyMaker,78,85,32,75
+ModernTechFirm,20,15,80,20
+GovContractorX,55,60,45,50
+CloudProviderZ,25,20,90,15
