@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io/)
 ![Predictive Engine](https://img.shields.io/badge/Predictive-Business_Sabermetrics-orange)
-![NIST Compliance](https://img.shields.io/badge/NIST-SP_800-82r3-lightgrey)
+![NIST SP 800-82r3 Inspired](https://img.shields.io/badge/NIST-SP_800--82r3-lightgrey)
 ![CISA Inspired](https://img.shields.io/badge/CISA-Inspired-blue)
 ![SPSS Inspired](https://img.shields.io/badge/SPSS-Inspired-blue)
 
