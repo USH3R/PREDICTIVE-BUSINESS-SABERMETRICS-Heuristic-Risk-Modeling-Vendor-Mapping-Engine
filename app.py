@@ -38,27 +38,26 @@ st.subheader("Gold Standard: Vendor Integrity Score (Hover for Components)")
 # Vendor Integrity Score = RiskScore
 df['VIS'] = df['RiskScore']
 
-# Hover text per vendor
-hover_text = [
+# Hover text per vendor (must be 2D array to match heatmap)
+hover_text_2d = [[
     f"Vendor: {v}<br>"
     f"VIS: {vis}<br>"
     f"Market Sentiment: {ms}<br>"
     f"Legacy Debt: {ld}<br>"
     f"Financial Velocity: {fv}<br>"
     f"Operational Fragility: {of}"
-    for v, vis, ms, ld, fv, of in zip(
-        df['Vendor'], df['VIS'], df['Market Sentiment'], df['Legacy Debt'],
-        df['Financial Velocity'], df['Operational Fragility']
-    )
-]
+] for v, vis, ms, ld, fv, of in zip(
+    df['Vendor'], df['VIS'], df['Market Sentiment'], df['Legacy Debt'],
+    df['Financial Velocity'], df['Operational Fragility']
+)]
 
-# Heatmap with a row per vendor
+# Heatmap with each vendor as a row
 fig_heatmap = go.Figure(data=go.Heatmap(
-    z=df[['VIS']].values,          # N x 1 array
-    x=["Vendor Integrity Score"],   # single column
-    y=df['Vendor'],                # each vendor is its own row
-    colorscale='RdYlGn_r',         # red=high risk, green=low risk
-    text=hover_text,
+    z=df[['VIS']].values,            # N x 1 array
+    x=["Vendor Integrity Score"],     # single column
+    y=df['Vendor'],                  # each vendor is a row
+    colorscale='RdYlGn_r',           # red=high risk, green=low risk
+    text=hover_text_2d,              # matches shape of z
     hoverinfo='text'
 ))
 
