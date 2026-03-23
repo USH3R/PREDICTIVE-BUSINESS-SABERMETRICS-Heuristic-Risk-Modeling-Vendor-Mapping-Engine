@@ -7,12 +7,6 @@ def calculate_risk(df):
     financial_weight = 0.20
     fragility_weight = 0.20
 
-df["RiskScore"] = (
-    df["MarketSentiment"] * sentiment_weight +
-    df["LegacyDebt"] * legacy_weight +
-    (100 - df["FinancialVelocity"]) * financial_weight +
-    df["OperationalFragility"] * fragility_weight
-
     df["RiskScore"] = (
         df["MarketSentiment"] * sentiment_weight +
         df["LegacyDebt"] * legacy_weight +
