@@ -1,7 +1,6 @@
 1. Build the GitHub Repository
-Create a repo called something like:
-predictive-business-sabermetrics  
-  
+Create a repo called something like:  
+predictive-business-sabermetrics    
 Structure:  
 /data         # CSV or JSON mock datasets  
 /notebooks    # Jupyter notebooks for initial analysis  
