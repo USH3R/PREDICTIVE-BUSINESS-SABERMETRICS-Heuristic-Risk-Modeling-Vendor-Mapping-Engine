@@ -35,10 +35,10 @@ st.bar_chart(df.set_index("Vendor")["RiskScore"])
 # -----------------------------
 st.subheader("Gold Standard: Vendor Integrity Score (Hover for Components)")
 
-# Vendor Integrity Score (VIS) = RiskScore
+# Vendor Integrity Score = RiskScore
 df['VIS'] = df['RiskScore']
 
-# Prepare hover text for each vendor
+# Hover text per vendor
 hover_text = [
     f"Vendor: {v}<br>"
     f"VIS: {vis}<br>"
@@ -52,14 +52,14 @@ hover_text = [
     )
 ]
 
-# Heatmap using Plotly Graph Objects
+# Heatmap with a row per vendor
 fig_heatmap = go.Figure(data=go.Heatmap(
-    z=[df['VIS'].values],        # 2D array
-    x=df['Vendor'],
-    y=["Vendor Integrity Score"],
-    colorscale='RdYlGn_r',      # red=high risk, green=low risk
+    z=df[['VIS']].values,          # N x 1 array
+    x=["Vendor Integrity Score"],   # single column
+    y=df['Vendor'],                # each vendor is its own row
+    colorscale='RdYlGn_r',         # red=high risk, green=low risk
     text=hover_text,
-    hoverinfo='text'             # show our custom hover text
+    hoverinfo='text'
 ))
 
 st.plotly_chart(fig_heatmap, use_container_width=True)
