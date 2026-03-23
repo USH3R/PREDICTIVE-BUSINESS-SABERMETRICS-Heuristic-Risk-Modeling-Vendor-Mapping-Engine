@@ -11,8 +11,8 @@
   If you downloaded or cloned the repository:
   Open a terminal.
   Navigate to the project folder.
-  Example:                                          cd Security-Automation-Tool
-  Run the launcher:                            bash demo.sh
+  Example:                       cd Security-Automation-Tool
+  Run the launcher:              bash demo.sh
 
   If You Are Using a Random Public Terminal
   Public terminals do not automatically have this project. You must first download or clone the repository.
