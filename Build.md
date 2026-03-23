@@ -17,7 +17,7 @@ This is the "Hardcore" manual for the Heuristic Risk Modeling Vendor Mapping Eng
   README.md     # Overview of the tool  
   Version everything; branch for new features (like risk-scoring, visualization, dashboard).  
     
-  2. Core Features (SPSS-inspired)  
+  2. **Core Architecture** Core Features (SPSS-inspired)  
   Input Data:
   Vendors, Market Sentiment, Financial Health, Legacy Debt, Operational Fanfare.
   Risk Model:
