@@ -36,7 +36,7 @@ This is the "Hardcore" manual for the Heuristic Risk Modeling Vendor Mapping Eng
     Optional: Streamlit for a simple web interface  
     
     4. Modeling After Prior Risk Mapper  
-    Reuse your previous code to handle:
+    Reuse previous code to handle:
     Weighted scoring logic
     Vendor filtering & sorting
     Legacy hardware / CVE integration
