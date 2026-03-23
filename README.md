@@ -6,6 +6,7 @@
 ![Predictive Engine](https://img.shields.io/badge/Predictive-Business_Sabermetrics-orange)
 ![NIST Compliance](https://img.shields.io/badge/NIST-SP_800-82r3-lightgrey)
 ![CISA Inspired](https://img.shields.io/badge/CISA-Inspired-blue)
+![SPSS Inspired](https://img.shields.io/badge/SPSS-Inspired-blue)
 
 **How to Run the Application**
 
