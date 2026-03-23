@@ -11,3 +11,8 @@ Legacy hardware in critical systems poses cybersecurity and operational risks du
 **PREDICTIVE BUSINESS SABERMETRICS: Heuristic Risk Modeling Vendor Mapping Engine**
 
 A GitHub-based risk engine automating the "Cold Fact" logic from critial rhetoric and data research. It applies a weighted heuristic—Schadenfreude (Market Sentiment), Legacy Debt (NIST-based hardware audits), and Financial Velocity to score vendor integrity. Featuring SPSS-style tables, bar charts, and "Critical Rhetoric" reports, it predicts supply chain hits or strikeouts.
+
+This is the strategic landing page. It bridges my Research Proposal #3 and the Executive Summary to the application.
+    The Heuristic Origin: The engine is built on the Purposive Sampling and Heuristic Logic established in my 2023 University of West Florida research in Dr. Gilmore's class.
+    The "Cold Facts" Philosophy: Defines the Schadenfreude Index as the evolution of my consumer sentiment studies.
+    PDF Links: Direct links to the Research Proposal #3 (Toy Revitalization) and the Legacy Hardware Executive Summary provide the academic and technical "warrants" for this tool.
