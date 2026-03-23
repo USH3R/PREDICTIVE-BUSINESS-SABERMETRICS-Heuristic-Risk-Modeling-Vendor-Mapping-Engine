@@ -1,43 +1,72 @@
-# ---------------------------------------------------------
-# APPLIED SABERMETRICS: The Integrated Heatmap Engine
-# ---------------------------------------------------------
-
-import plotly.express as px
 import streamlit as st
+import pandas as pd
+from risk_model import calculate_risk
+import plotly.express as px
 
-def render_sabermetric_heatmap(df):
-    # The VIS (Vendor Integrity Score) is our Dependent Variable
-    df['VIS'] = df['RiskScore']
-    
-    # These are the Independent Variables we want to "Peek" at via Hover
-    # Market Sentiment, Legacy Debt, Financial Velocity, Operational Fragility
-    
-    fig_heatmap = px.imshow(
-        [df['VIS'].values], 
-        labels=dict(x="Vendor", y="Integrity", color="Risk Level"),
-        x=df['Vendor'],
-        y=["VIS"],
-        color_continuous_scale='RdYlGn_r', # Red=High Risk, Green=Secure
-        text_auto=True
+# -----------------------------
+# Load vendor data
+# -----------------------------
+df = pd.read_csv("vendors.csv")
+
+# -----------------------------
+# Calculate risk
+# -----------------------------
+df = calculate_risk(df)
+
+# -----------------------------
+# Streamlit title
+# -----------------------------
+st.title("Predictive Business Sabermetrics")
+
+# -----------------------------
+# Table view of vendor data
+# -----------------------------
+st.subheader("Vendor Risk Table")
+st.write(df)
+
+# -----------------------------
+# Bar chart of RiskScore
+# -----------------------------
+st.subheader("RiskScore Bar Chart")
+st.bar_chart(df.set_index("Vendor")["RiskScore"])
+
+# -----------------------------
+# Gold Standard: Vendor Integrity Score with Hover Details
+# -----------------------------
+st.subheader("Gold Standard: Vendor Integrity Score (Hover for Components)")
+
+# Vendor Integrity Score (VIS) = RiskScore
+df['VIS'] = df['RiskScore']
+
+# Create hover text for each vendor
+hover_text = [
+    f"Vendor: {v}<br>"
+    f"VIS: {vis}<br>"
+    f"Market Sentiment: {ms}<br>"
+    f"Legacy Debt: {ld}<br>"
+    f"Financial Velocity: {fv}<br>"
+    f"Operational Fragility: {of}"
+    for v, vis, ms, ld, fv, of in zip(
+        df['Vendor'], df['VIS'], df['Market Sentiment'], df['Legacy Debt'],
+        df['Financial Velocity'], df['Operational Fragility']
     )
+]
 
-    # The "Sabermetrics" Hover Tooltip Logic
-    fig_heatmap.update_traces(
-        customdata=df[['Market Sentiment', 'Legacy Debt', 'Financial Velocity', 'Operational Fragility']],
-        hovertemplate=(
-            "<b>Vendor: %{x}</b><br>" +
-            "Total Risk Score: %{z}<br>" +
-            "<span style='color:lightgrey'>-------------------------</span><br>" +
-            "Market Sentiment: %{customdata[0]}%<br>" +
-            "Legacy Debt: %{customdata[1]}%<br>" +
-            "Financial Velocity: %{customdata[2]}/5<br>" +
-            "Operational Fragility: %{customdata[3]}%<extra></extra>"
-        )
-    )
+# Heatmap visualization
+fig_heatmap = px.imshow(
+    [df['VIS'].values.reshape(1, -1)],  # ensure 2D array
+    labels=dict(x="Vendor", y="Score", color="Vendor Integrity Score"),
+    x=df['Vendor'],
+    y=["Vendor Integrity Score"],
+    color_continuous_scale='RdYlGn_r',  # red=high risk, green=low risk
+    text=hover_text
+)
 
-    fig_heatmap.update_layout(height=300, margin=dict(l=20, r=20, t=30, b=20))
-    
-    return fig_heatmap
+st.plotly_chart(fig_heatmap, use_container_width=True)
 
-# In your main app.py, you simply call:
-# st.plotly_chart(render_sabermetric_heatmap(df), use_container_width=True)
+# -----------------------------
+# Ranked Vendor Table
+# -----------------------------
+st.subheader("Ranked Vendors by Integrity Score (VIS)")
+df_ranked = df.sort_values(by="VIS", ascending=False).reset_index(drop=True)
+st.write(df_ranked[["Vendor", "VIS"]])
