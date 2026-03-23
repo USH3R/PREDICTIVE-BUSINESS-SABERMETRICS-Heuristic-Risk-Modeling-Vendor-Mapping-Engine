@@ -68,14 +68,14 @@ Later add:
 - Social sentiment scraping  
 Then the engine becomes a real predictive supply chain risk system.
 
-**Flow Diagram**
+**Flow Diagram**  
 Vendor Data (CSV / JSON)  
-        →  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        →  
 Data Loader (Python / Pandas)  
-        →  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        →  
 Heuristic Risk Engine  
 (Schadenfreude + Legacy Debt + Financial Velocity)  
-        →  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        →  
 Risk Score Calculation  
         →  
 Vendor Risk Table  
