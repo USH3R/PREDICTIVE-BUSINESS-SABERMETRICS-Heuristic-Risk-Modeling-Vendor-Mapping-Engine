@@ -41,18 +41,19 @@ df['VIS'] = df['RiskScore']
 # Sort by VIS descending (highest risk on top)
 df_sorted = df.sort_values(by="VIS", ascending=False).reset_index(drop=True)
 
-# Hover text per vendor
-hover_text_2d = [[
+# Hover text per vendor (single-column optimized)
+hover_text_2d = [
     f"<b>Vendor:</b> {v}<br>"
     f"<b>VIS:</b> {vis}<br>"
     f"<b>Market Sentiment:</b> {ms}<br>"
     f"<b>Legacy Debt:</b> {ld}<br>"
     f"<b>Financial Velocity:</b> {fv}<br>"
     f"<b>Operational Fragility:</b> {of}"
-] for v, vis, ms, ld, fv, of in zip(
-    df_sorted['Vendor'], df_sorted['VIS'], df_sorted['Market Sentiment'], 
-    df_sorted['Legacy Debt'], df_sorted['Financial Velocity'], df_sorted['Operational Fragility']
-)]
+    for v, vis, ms, ld, fv, of in zip(
+        df_sorted['Vendor'], df_sorted['VIS'], df_sorted['Market Sentiment'], 
+        df_sorted['Legacy Debt'], df_sorted['Financial Velocity'], df_sorted['Operational Fragility']
+    )
+]
 
 # Create heatmap with numbers displayed inside cells
 fig_heatmap = go.Figure(data=go.Heatmap(
@@ -60,7 +61,7 @@ fig_heatmap = go.Figure(data=go.Heatmap(
     x=["Vendor Integrity Score"],
     y=df_sorted['Vendor'],
     colorscale='RdYlGn_r',
-    text=[[f"{v:0.2f}" for v in row] for row in df_sorted[['VIS']].values],  # numbers inside cells
+    text=[[f"{v:0.2f}" for v in row] for row in df_sorted[['VIS']].values],
     texttemplate="%{text}",
     textfont={"size":14, "color":"black"},
     hoverinfo='text',
@@ -80,12 +81,12 @@ fig_heatmap.update_layout(
 st.plotly_chart(fig_heatmap, use_container_width=True)
 
 # -----------------------------
-# Ranked Vendors & Pie Chart Side by Side
+# Pie Chart & Ranked Vendor Table Side by Side
 # -----------------------------
 st.subheader("Vendor Integrity Overview")
 
 # Columns layout: Pie chart left, table right
-col1, col2 = st.columns([2,3])
+col1, col2 = st.columns([3,2])  # more width for the pie chart
 
 # Pie chart
 with col1:
@@ -95,8 +96,20 @@ with col1:
         values=df_sorted['VIS'],
         hoverinfo='label+percent+value',
         textinfo='label+value',
-        textfont_size=14
+        textfont_size=14,
+        insidetextorientation='radial',  # text rotates to fit inside slices
+        pull=[0.05]*len(df_sorted),      # slight pull on all slices for visibility
     )])
+    fig_pie.update_layout(
+        margin=dict(t=20, b=20, l=20, r=20),  # reduce margins
+        height=400,  # make pie bigger
+        legend=dict(
+            yanchor="top",
+            y=0.9,
+            xanchor="left",
+            x=0.0
+        )
+    )
     st.plotly_chart(fig_pie, use_container_width=True)
 
 # Ranked table
