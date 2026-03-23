@@ -43,4 +43,27 @@ This is the "Hardcore" manual for the Heuristic Risk Modeling Vendor Mapping Eng
   Upgrade it by:
   Adding Market Sentiment & Operational Fanfare
   Generating auto-summary text like “Critical Rhetoric Report”
-  Visualizing data in bar, pie, and table formats  
+  Visualizing data in bar, pie, and table formats
+
+**Core Data Model**  
+Dataset example (vendors.csv)  
+Vendor,MarketSentiment,LegacyDebt,FinancialVelocity  
+LegacyToyMaker,78,85,32  
+ModernTechFirm,20,15,80  
+GovContractorX,55,60,45  
+CloudProviderZ,25,20,90  
+
+**Metrics:**
+Metric	Meaning
+Market Sentiment	Schadenfreude index
+Legacy Debt	% unsupported hardware
+Financial Velocity	revenue trajectory
+Risk Score	weighted heuristic output
+
+**The Real Sabermetric (Future Step)**  
+Later add:  
+- CVE vulnerability feeds  
+- CISA KEV database  
+- SEC financial filings  
+- Social sentiment scraping  
+Then the engine becomes a real predictive supply chain risk system.
